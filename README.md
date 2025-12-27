@@ -1,7 +1,7 @@
 # 🧠 HMS EEG Brain Activity Classification
 ## EEGNet vs KAN vs Pretrained Vision Models
 
-Deep learning experiments for classifying harmful brain activity from EEG spectrograms, based on the HMS Kaggle dataset. For dataset please refer to this link https://github.com/aisyahkhns/HMS-Brain-Classification
+Deep learning experiments for classifying harmful brain activity from EEG spectrograms, based on the HMS Kaggle dataset. For dataset pre-processing please refer to this link https://github.com/aisyahkhns/HMS-Brain-Classification
 
 ## 📊 Dataset
 
@@ -57,4 +57,4 @@ Best for: EEG-specialized architectures
 
 ## 📚 References
 
-- HMS Kaggle Competition: [link]
+- HMS Kaggle Competition: [https://www.kaggle.com/competitions/hms-harmful-brain-activity-classification]
