@@ -1,58 +1,63 @@
-🧠 ** HMS EEG Brain Activity Classification **
+# 🧠 HMS EEG Brain Activity Classification
+## EEGNet vs KAN vs Pretrained Vision Models
 
-EEGNet vs KAN vs Pretrained Vision Models
+Deep learning experiments for classifying harmful brain activity from EEG spectrograms, based on the HMS Kaggle dataset. For dataset please refer to this link https://github.com/aisyahkhns/HMS-Brain-Classification
 
-Deep learning experiments for classifying harmful brain activity from EEG spectrograms, based on the HMS Kaggle dataset.
+### 🧪 Research Question
+Do EEG-specific models beat large ImageNet-pretrained networks?
 
-🧪 Do EEG-specific models beat large ImageNet-pretrained networks?
-This repository explores the answer.
+## 📊 Dataset
 
-⸻
+**HMS – Harmful Brain Activity Classification (Kaggle)**
 
-📊 Dataset
-	•	HMS – Harmful Brain Activity Classification (Kaggle)
-	•	17,089 EEG samples
-	•	4-channel EEG spectrograms
-	•	6 highly imbalanced classes
-	•	Seizure
-	•	LPD
-	•	GPD
-	•	LRDA
-	•	GRDA
-	•	Other
+- 17,089 EEG samples
+- 4-channel EEG spectrograms
+- 6 highly imbalanced classes:
+  - Seizure
+  - LPD (Low Period Discharge)
+  - GPD (Generalized Period Discharge)
+  - LRDA (Lateralized Rhythmic Delta Activity)
+  - GRDA (Generalized Rhythmic Delta Activity)
+  - Other
 
-⸻
+---
 
-🧠 Models
+## 🧠 Models Compared
 
-🔹 Pretrained Baselines
-	•	ResNet
-	•	DenseNet
-	•	EfficientNet
-	•	Vision Transformer (ViT)
+### Pretrained Vision Models (ImageNet)
+- ResNet
+- DenseNet
+- EfficientNet
+- Vision Transformer (ViT)
 
-🔹 EEG-Specialized Models
-	•	EEGNet – lightweight, EEG-aware convolutional network
-	•	KAN – Kolmogorov-Arnold Network with learnable activation functions
+### EEG-Specialized Models
+- **EEGNet** – Lightweight, EEG-aware convolutional network
+- **KAN** – Kolmogorov-Arnold Network with learnable activation functions
 
-⸻
+---
 
-🔄 Two Training Philosophies
+## 🔄 Training Strategies
 
-🧩 1. Large Models → Use Augmentation
-	•	MixUp data augmentation
-	•	KL Divergence loss
-	•	Simple class weighting
+### Strategy 1: Large Models + Augmentation
+Best for: Pretrained vision models
 
-✔ Improves generalization for large pretrained vision models
+- Data augmentation: MixUp
+- Loss function: KL Divergence
+- Class balancing: Simple weighting
+- Why: Improves generalization on large pretrained models
 
-⸻
+### Strategy 2: EEG Models + Signal Preservation
+Best for: EEG-specialized architectures
 
-🧠 2. EEG Models → Preserve Signal
-	•	No data augmentation
-	•	Soft Focal Loss
-	•	Aggressive class balancing
+- Data augmentation: None
+- Loss function: Soft Focal Loss
+- Class balancing: Aggressive weighting
+- Why: Preserves physiological patterns in EEG signals
 
-✔ Preserves EEG temporal and frequency structure
+## 📈 Results & Insights
+<img width="3570" height="2677" alt="results_table_final" src="https://github.com/user-attachments/assets/5e7ea6cc-0bfe-41d5-8c91-824053b2f30b" />
 
-⚠️ Mixing EEG signals can destroy meaningful physiological patterns.
+
+## 📚 References
+
+- HMS Kaggle Competition: [link]
