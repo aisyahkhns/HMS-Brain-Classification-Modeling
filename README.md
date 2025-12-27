@@ -1,19 +1,48 @@
-HMS Brain Activity Classification: EEGNet & KAN
-Classification of harmful brain activity patterns from EEG spectrograms using deep learning.
+🧠 HMS EEG Brain Activity Classification
+
+EEGNet vs KAN vs Pretrained Vision Models
+
+Deep learning experiments for classifying harmful brain activity from EEG spectrograms, based on the HMS Kaggle dataset.
+
+🧪 Do EEG-specific models beat large ImageNet-pretrained networks?
+This repo explores the answer.
+
+⸻
+
 📊 Dataset
-HMS - Harmful Brain Activity Classification (Kaggle Competition)
+	•	HMS – Harmful Brain Activity Classification (Kaggle)
+	•	17,089 EEG samples
+	•	4-channel EEG spectrograms
+	•	6 highly imbalanced classes (Seizure, LPD, GPD, LRDA, GRDA, Other)
 
-Total Samples: 17,089 EEG recordings
-Input: 4-channel EEG spectrograms [4, 224, 224]
+⸻
 
-Channels: LL (Left-Left), RL (Right-Left), LP (Left-Posterior), RP (Right-Posterior)
+🧠 Models
 
+🔹 Pretrained Baselines
 
-Classes: 6 brain activity patterns
+ResNet · DenseNet · EfficientNet · Vision Transformer
 
-Seizure (15.9%)
-LPD - Lateralized Periodic Discharges (15.1%)
-GPD - Generalized Periodic Discharges (10.6%)
-LRDA - Lateralized Rhythmic Delta Activity (5.5%)
-GRDA - Generalized Rhythmic Delta Activity (10.7%)
-Other (42.2%) ⚠️ Highly imbalanced
+🔹 EEG-Specialized
+	•	EEGNet – lightweight, EEG-aware CNN
+	•	KAN – Kolmogorov-Arnold Network with learnable activations
+
+⸻
+
+🔄 Two Training Philosophies
+
+🧩 1. Large Models → Use Augmentation
+	•	MixUp augmentation
+	•	KL Divergence loss
+	•	Simple class weighting
+✔ Helps generalization of large pretrained models
+
+⸻
+
+🧠 2. EEG Models → Preserve Signal
+	•	NO data augmentation
+	•	Soft Focal Loss
+	•	Aggressive class balancing
+✔ Keeps EEG temporal & frequency structure intact
+
+⚠️ Mixing EEG signals can destroy meaningful physiological patterns.
