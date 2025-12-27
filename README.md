@@ -3,9 +3,6 @@
 
 Deep learning experiments for classifying harmful brain activity from EEG spectrograms, based on the HMS Kaggle dataset. For dataset please refer to this link https://github.com/aisyahkhns/HMS-Brain-Classification
 
-### 🧪 Research Question
-Do EEG-specific models beat large ImageNet-pretrained networks?
-
 ## 📊 Dataset
 
 **HMS – Harmful Brain Activity Classification (Kaggle)**
